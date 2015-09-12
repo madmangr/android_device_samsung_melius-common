@@ -8,6 +8,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.ehrpd=true \
+    ro.ril.hsxpa=1 \
+    ro.ril.gprsclass=10 \
+    persist.radio.add_power_save=1 \
+    persist.radio.apm_sim_not_pwdn=1 \
+    persist.radio.fill_eons=1 \
+    persist.radio.prefer_spn=0 \
+    persist.data.netmgrd.qos.enable=false \
+    ro.ril.transmitpower=true \
+    lpa.decode=true \
     persist.rild.nitz_plmn="" \
     persist.rild.nitz_long_ons_0="" \
     persist.rild.nitz_long_ons_1="" \
@@ -19,7 +29,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.rild.nitz_short_ons_3="" \
     ril.subscription.types=NV,RUIM \
     ro.telephony.ril_class=MeliusRIL \
-    persist.radio.add_power_save=1
+    persist.fuse_sdcard=true
 
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -48,7 +58,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.composition.type=c2d \
     persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0 \
-    ro.sf.lcd_density=240 \
+    ro.sf.lcd_density=280 \
     ro.opengles.version=196608 \
     ro.qualcomm.cabl=0 \
     ro.hwui.text_large_cache_height=2048
