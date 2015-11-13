@@ -238,7 +238,7 @@
          rat-name:rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max
          If no value is found for the rat-name in use, the system default will be applied.
     -->
-    <string-array name="config_mobile_tcp_buffers">	
+    <string-array name="config_mobile_tcp_buffers">
         <item>umts:4094,87380,704512,4096,16384,110208</item>
         <item>hspa:4092,87380,704512,4096,16384,262144</item>
         <item>hsupa:4092,87380,704512,4096,16384,262144</item>
@@ -280,18 +280,13 @@
 
     <!-- Boolean indicating if current platform supports BLE peripheral mode -->
     <bool name="config_bluetooth_le_peripheral_mode_supported">true</bool>
-    
+
     <!-- Boolean indicating if current platform supports bluetooth wide band speech -->
     <bool name="config_bluetooth_wide_band_speech">false</bool>
 
     <!-- Indicate whether closing the lid causes the device to go to sleep and opening it causes the device to wake up.
          The default is false. -->
     <bool name="config_lidControlsSleep">true</bool>
-
-    <!-- Enable the option to check proximity sensor when deciding whether to turn the screen on
-         NOTE ! - Enable for devices that have a fast response proximity sensor -->	
-    <bool name="config_proximityCheckOnWake">true</bool>
-    <integer name="config_proximityCheckTimeout">250</integer>
 
     <!-- Disable dreams. Interferes with ambient display. -->
     <bool name="config_dreamsSupported">false</bool>
@@ -304,19 +299,8 @@
     <!-- If true, the screen can be rotated via the accelerometer in all 4 rotations as the default behavior. -->
     <bool name="config_allowAllRotations">true</bool>
 
-    <!-- Defines the system property to set for performance profile xe: sys.cpu.modes. Leave it
-         blank if the device do not support performance profiles -->
-    <string name="config_perf_profile_prop" translatable="false">sys.perf.profile</string>
-
-    <!-- When config_perf_profile_prop is defined, this value MUST be the index of
-         one of the listes values in frameworks/base/core/res/res/values/cm_arrays.xml
-         for "perf_profile_values" array. Leave it blank if the device do not support
-         performance profiles  -->
-    <string name="config_perf_profile_default_entry" translatable="false">1</string>
-
-     <!-- Minimum screen brightness allowed by the power manager. -->
      <integer name="config_screenBrightnessDim">2</integer>
- 
+
      <!-- Minimum screen brightness setting allowed by the power manager.
           The user is forbidden from setting the brightness below this level. -->
      <integer name="config_screenBrightnessSettingMinimum">2</integer>

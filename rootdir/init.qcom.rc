@@ -31,6 +31,8 @@ import init.target.rc
 import init.carrier.rc
 
 on init
+    export LD_PRELOAD "/system/lib/libsamsung_symbols.so"
+
     # Set permissions for persist partition
     mkdir /persist 0771 system system
 
@@ -179,9 +181,6 @@ on boot
 
 # MSM specific files that need to be created on /data
 on post-fs-data
-    # We will remap this as /mnt/sdcard with the sdcard fuse tool
-    mkdir /data/media 0770 media_rw media_rw
-
     # Create directory used by audio subsystem
     mkdir /data/misc/audio 0770 audio audio
 

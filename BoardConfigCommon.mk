@@ -26,7 +26,7 @@
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/melius-common/include
 
 # Kernel
-BOARD_KERNEL_CMDLINE         := androidboot.hardware=qcom user_debug=23 androidboot.bootdevice=msm_sdcc.1
+BOARD_KERNEL_CMDLINE         := androidboot.hardware=qcom user_debug=23 androidboot.bootdevice=msm_sdcc.1 androidboot.selinux=permissive
 BOARD_KERNEL_BASE            := 0x80200000
 BOARD_MKBOOTIMG_ARGS         := --ramdisk_offset 0x02000000
 BOARD_KERNEL_PAGESIZE        := 2048
@@ -38,12 +38,17 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8960
 
 # Recovery
 TARGET_RECOVERY_FSTAB := device/samsung/melius-common/rootdir/fstab.qcom
+
+# Reduce space taken by the journal
+BOARD_SYSTEMIMAGE_JOURNAL_SIZE := 0
+
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 10485760
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1572864000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 5821660160
+BOARD_CACHEIMAGE_PARTITION_SIZE := 209715200
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Bluetooth
@@ -59,6 +64,14 @@ BOARD_USES_SEPERATED_HEADSET_MIC := true
 BOARD_USES_SEPERATED_VOICE_SPEAKER := true
 BOARD_USES_SEPERATED_VOIP := true
 QCOM_CSDCLIENT_ENABLED := false
+QCOM_PROXY_DEVICE_ENABLED := true
+QCOM_USBAUDIO_ENABLED := true
+AUDIO_FEATURE_DEEP_BUFFER_RINGTONE := true
+
+# Enable QCOM FM feature
+#AUDIO_FEATURE_ENABLED_FM := true
+#QCOM_FM_ENABLED := true
+#BOARD_USES_SEPERATED_FM := true
 
 # Allow suspend in charge mode
 BOARD_CHARGER_ENABLE_SUSPEND := true
