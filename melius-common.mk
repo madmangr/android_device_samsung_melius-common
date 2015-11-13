@@ -128,6 +128,10 @@ PRODUCT_COPY_FILES += \
 # call common melius system props
 $(call inherit-product, device/samsung/melius-common/system_prop.mk)
 
+# SelinuxModeChanger
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/com.mrbimc.selinux_42.apk:system/priv-app/SELinuxModeChanger/SELinuxModeChanger.apk
+
 # call common msm8930
 $(call inherit-product, device/samsung/msm8930-common/msm8930.mk)
 
